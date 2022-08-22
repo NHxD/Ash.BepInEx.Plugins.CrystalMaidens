@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <AssemblyName>Ash.BepInEx.Plugins.CrystalMaidens.Dumper</AssemblyName>
+    <Description>Crystal Maidens Dumper</Description>
+    <Version>1.0.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>9.0</LangVersion>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
+    <PackageReference Include="UnityEngine.Modules" Version="2018.4.36" IncludeAssets="compile" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>..\References\BepInEx\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Harmony">
+      <HintPath>..\References\BepInEx\BepInEx.Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Preloader">
+      <HintPath>..\References\BepInEx\BepInEx.Preloader.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\References\CrystalMaidens\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\References\CrystalMaidens\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="BSLH2GameCore">
+      <HintPath>..\References\CrystalMaidens\BSLH2GameCore.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\References\CrystalMaidens\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="VandalFramework">
+      <HintPath>..\References\CrystalMaidens\VandalFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="vNET">
+      <HintPath>..\References\CrystalMaidens\vNET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
